@@ -1,0 +1,2 @@
+class Tako < ApplicationRecord
+end

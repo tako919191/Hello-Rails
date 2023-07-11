@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Takos</h1>
+
+<div id="takos">
+  <% @takos.each do |tako| %>
+    <%= render tako %>
+    <p>
+      <%= link_to "Show this tako", tako %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tako", new_tako_path %>
