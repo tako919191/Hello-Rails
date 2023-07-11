@@ -32,4 +32,10 @@
     "editor.insertSpaces": false,
     "editor.detectIndentation": false,
   },
+
+  // Ruby //
+  // If not specified searches for 'rubocop' executable available on PATH (default and recommended)
+  "ruby.rubocop.executePath": "",
+  // default true
+  "ruby.rubocop.onSave": true
 }
