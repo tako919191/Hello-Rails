@@ -1,5 +1,6 @@
 {
     "recommendations": [
+        "bradlc.vscode-tailwindcss",
         "DavidAnson.vscode-markdownlint",
         "marp-team.marp-vscode",
         "mhutchie.git-graph",
