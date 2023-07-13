@@ -72,4 +72,6 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'htmlbeautifier'
+
 gem "tailwindcss-rails", "~> 2.0"

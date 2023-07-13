@@ -1,7 +1,10 @@
 {
     "recommendations": [
+        "aliariff.vscode-erb-beautify",
         "bradlc.vscode-tailwindcss",
         "DavidAnson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "evondev.indent-rainbow-palettes",
         "marp-team.marp-vscode",
         "mhutchie.git-graph",
         "mosapride.zenkaku",

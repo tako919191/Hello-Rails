@@ -8,8 +8,20 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.renderControlCharacters": true,
   "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.formatOnSave": false, // default
 
   // Others //
+  "files.associations": {
+    "*.html.erb": "erb",
+    "*.css": "tailwindcss"
+  },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "search.showLineNumbers": true,
@@ -27,6 +39,11 @@
   },
   "markdown.styles": [".vscode/style.css"],
 
+  // json //
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+
   // Makefile //
   "[makefile]": {
     "editor.insertSpaces": false,
@@ -37,5 +54,14 @@
   // If not specified searches for 'rubocop' executable available on PATH (default and recommended)
   "ruby.rubocop.executePath": "",
   // default true
-  "ruby.rubocop.onSave": true
+  "ruby.rubocop.onSave": true,
+  "[erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+    "editor.formatOnSave": true
+  },
+
+  // javascript //
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
 }
