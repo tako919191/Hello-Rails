@@ -75,3 +75,5 @@ end
 gem 'htmlbeautifier'
 
 gem "tailwindcss-rails", "~> 2.0"
+
+gem "font-awesome-sass", "~> 6.4.0"
