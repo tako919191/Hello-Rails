@@ -1,6 +1,10 @@
-.PHONY: s bundle test rubo
+.PHONY: s dev bundle test check correct
+
 s:
 	@rails s -b 0.0.0.0 -p 3000
+
+dev:
+	@./bin/dev
 
 bundle:
 	@bundle install
