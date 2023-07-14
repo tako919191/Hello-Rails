@@ -15,10 +15,11 @@
 
 ## Usage
 
-- Open in devcontainer
+1. Open in devcontainer
+2. Run the following commands
 
-```
-$ make s
+```sh
+make s
 ```
 
 ## Links

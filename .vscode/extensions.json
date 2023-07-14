@@ -15,5 +15,6 @@
         "redhat.vscode-yaml",
         "TakumiI.markdowntable",
         "yzhang.markdown-all-in-one",
+        "christian-kohler.path-intellisense",
     ]
 }
