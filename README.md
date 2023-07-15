@@ -4,6 +4,8 @@
 
 - My Sandbox for Ruby on Rails 7
 
+![screenshot-1](./img/screenshot-1.png)
+
 ## Using...
 
 - Ruby (3.2.2)
