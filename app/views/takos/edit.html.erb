@@ -1,10 +1,6 @@
-<h1>Editing tako</h1>
-
-<%= render "form", tako: @tako %>
-
-<br>
-
-<div>
-  <%= link_to "Show this tako", @tako %> |
-  <%= link_to "Back to takos", takos_path %>
+<div class="flex flex-col">
+  <h1 class="text-5xl font-extrabold dark:text-white">Edit</h1>
+  <div class="my-6">
+    <%= render "form", tako: @tako %>
+  </div>
 </div>
