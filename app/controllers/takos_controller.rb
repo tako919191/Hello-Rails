@@ -52,7 +52,7 @@ class TakosController < ApplicationController
     @tako.destroy
 
     respond_to do |format|
-      format.html { redirect_to takos_url, notice: "Tako was successfully destroyed." }
+      format.html { redirect_to takos_url, notice: "Tako was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end
@@ -65,6 +65,6 @@ class TakosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tako_params
-      params.require(:tako).permit(:name, :age)
+      params.require(:tako).permit(:name, :age, :kind)
     end
 end
