@@ -1,10 +1,69 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @tako %>
-
-<div>
-  <%= link_to "Edit this tako", edit_tako_path(@tako) %> |
-  <%= link_to "Back to takos", takos_path %>
-
-  <%= button_to "Destroy this tako", @tako, method: :delete %>
+<div class="flex flex-col p-6">
+  <div class="flex justify-center">
+    <%= link_to @tako, class: "inline-flex items-center justify-center w-48 h-48 mx-2 rounded-full bg-blue-600" do %>
+      <i class="dark:text-white fa-brands fa-octopus-deploy fa-7x"></i>
+    <% end %>
+  </div>
+  <div class="my-6">
+    <div class="relative overflow-x-auto">
+      <table class="w-full text-xl text-left text-gray-500 dark:text-gray-00">
+        <thead class="text-gray-700 uppercase bg-gray-50 dark:bg-blue-800 dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3">
+              parameter
+            </th>
+            <th scope="col" class="px-6 py-3">
+              value
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              Name
+            </th>
+            <td class="px-6 py-4">
+              <%= @tako.name %>
+            </td>
+          </tr>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              Kind
+            </th>
+            <td class="px-6 py-4">
+              <%= @tako.kind %>
+            </td>
+          </tr>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              Age
+            </th>
+            <td class="px-6 py-4">
+              <%= @tako.age %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="flex flex-row-reverse">
+    <div class="inline-flex rounded-md shadow-sm" role="group">
+      <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+        <%= link_to edit_tako_path(@tako) do %>
+          <i class="w-3 h-3 mr-2 fa-solid fa-pen"></i>Edit
+        <% end %>
+      </button>
+      <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+        <%= link_to root_path do %>
+          <i class="w-3 h-3 mr-2 fa-solid fa-house"></i>Home
+        <% end %>
+      </button>
+      <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+        <%= link_to @tako, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+          <i class="w-3 h-3 mr-2 fa-solid fa-trash-can"></i>Delete
+        <% end %>
+      </button>
+    </div>
+  </div>
 </div>
