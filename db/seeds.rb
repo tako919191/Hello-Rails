@@ -8,8 +8,19 @@
 
 Tako.create(
   [
-    { name: "tako", age: 1 },
-    { name: "tako2", age: 2 },
-    { name: "tako3", age: 3 }
+    { name: "tako1", age: 1, kind: "Blue-ringed octopus" },
+    { name: "tako2", age: 2, kind: "Dumbo octopus" },
+    { name: "tako3", age: 3, kind: "Mimic octopus" },
+    { name: "tako4", age: 4, kind: "Atlantic pygmy octopus" },
+    { name: "tako5", age: 5, kind: "Giant Pacific octopus" },
+    { name: "tako6", age: 6, kind: "East Pacific red octopus" },
+    { name: "tako7", age: 7, kind: "Coconut octopus" },
+    { name: "tako8", age: 8, kind: "Caribbean reef octopus" },
+    { name: "tako9", age: 9, kind: "Flapjack octopus" },
+    { name: "tako10", age: 10, kind: "Blanket octopus" },
+    { name: "tako11", age: 11, kind: "Common octopus" },
+    { name: "tako12", age: 12, kind: "Bimac octopus" },
+    { name: "tako13", age: 13, kind: "Wolfi octopus" },
+    { name: "tako14", age: 14, kind: "Atlantic white-spotted octopus" },
   ]
 )
