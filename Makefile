@@ -1,4 +1,4 @@
-.PHONY: s dev bundle test check correct
+.PHONY: s dev bundle test st check correct
 
 s:
 	@rails s -b 0.0.0.0 -p 3000
@@ -11,6 +11,9 @@ bundle:
 
 test:
 	@rails test
+
+st:
+	@rails test:system
 
 check:
 	@rubocop
