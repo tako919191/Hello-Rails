@@ -1,0 +1,19 @@
+version: '3'
+services:
+  hello-rails-db:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: root
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: tako919191
+    ports:
+      - "3306:3306"
+
+  web:
+    image: tako919191/hello-rails:latest
+    stdin_open: true
+    tty: true
+    depends_on:
+      - hello-rails-db
+    ports:
+      - "3002:3002"

@@ -1,0 +1,38 @@
+ARG BASE_IMAGE=ruby:3.2.2
+ARG CACHE_IMAGE=${BASE_IMAGE}
+ARG BUNDLER_VERSION=2.4.10
+
+# Build stage for cache gems
+FROM ${CACHE_IMAGE} AS gem-cache
+ARG CACHE_IMAGE
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
+RUN mkdir -p /usr/local/bundle
+
+# Image that is installed Bundler
+FROM $BASE_IMAGE AS base
+ARG BASE_IMAGE
+ARG BUNDLER_VERSION
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
+RUN gem install bundler:$BUNDLER_VERSION
+WORKDIR /usr/src/app
+
+# Copy gems from Build stage
+FROM base AS gems
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
+COPY --from=gem-cache /usr/local/bundle /usr/local/bundle
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+# Deploy source codes
+FROM base AS deploy
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
+ENV APP_ROOT=/app
+WORKDIR ${APP_ROOT}
+COPY --from=gems /usr/local/bundle /usr/local/bundle
+COPY . ${APP_ROOT}
+EXPOSE 3002
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3002", "-e", "production"]
