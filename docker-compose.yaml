@@ -19,3 +19,12 @@ services:
       - .:/Hello-Rails
     ports:
       - "3000:3000"
+    environment:
+      SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
+
+  chrome:
+    image: seleniarm/standalone-chromium:114.0
+    shm_size: '2gb'
+    ports:
+      - "4444:4444"
+      - "7900:7900"

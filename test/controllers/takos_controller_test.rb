@@ -17,7 +17,7 @@ class TakosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tako" do
     assert_difference("Tako.count") do
-      post takos_url, params: { tako: { age: @tako.age, name: @tako.name } }
+      post takos_url, params: { tako: { age: @tako.age, name: @tako.name, kind: @tako.kind } }
     end
 
     assert_redirected_to tako_url(Tako.last)
@@ -34,7 +34,7 @@ class TakosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tako" do
-    patch tako_url(@tako), params: { tako: { age: @tako.age, name: @tako.name } }
+    patch tako_url(@tako), params: { tako: { age: @tako.age, name: @tako.name, kind: @tako.kind } }
     assert_redirected_to tako_url(@tako)
   end
 
