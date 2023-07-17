@@ -1,4 +1,4 @@
-.PHONY: s dev bundle test st check correct build
+.PHONY: s dev bundle test st check correct build up down
 VER :=
 
 s:
@@ -24,6 +24,12 @@ correct:
 
 build: __require_VER
 	@docker buildx build -f Dockerfile.prod . -t tako919191/hello-rails:${VER} -t tako919191/hello-rails:latest
+
+up:
+	@docker compose -f docker-compose.prod.yaml up
+
+down:
+	@docker compose -f docker-compose.prod.yaml down
 
 .PHONY: __require_VER
 __require_VER:
