@@ -19,6 +19,9 @@ services:
       - db
     ports:
       - "3002:3002"
+    environment:
+      - HELLO_RAILS_DATABASE_PASSWORD=password
+      - HELLO_RAILS_DATABASE_HOST=db
 
 volumes:
   data-mysql-volume:
